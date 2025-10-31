@@ -1,0 +1,78 @@
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--muted:#64748b;--blue:#2563eb;--blue-600:#1d4ed8;--shadow:0 10px 25px rgba(2,6,23,0.08);--grad:linear-gradient(135deg,#e0f2fe, #eff6ff)}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);transition:background .2s,color .2s}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.site-header{background:var(--card);border-bottom:1px solid #e5e7eb}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--grad);border-radius:16px;padding:18px}
+.site-header h1{margin:0;color:var(--text);font-size:26px}
+.subtitle{margin:6px 0 0;color:#425569}
+.controls{display:flex;align-items:center;gap:8px}
+.switch{position:relative;display:inline-block;width:46px;height:26px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#cbd5e1;border-radius:32px;transition:.2s}
+.slider:before{content:"";position:absolute;height:20px;width:20px;left:3px;top:3px;background:white;border-radius:50%;transition:.2s}
+.switch input:checked + .slider{background:#334155}
+.switch input:checked + .slider:before{transform:translateX(20px)}
+.switch-label{color:#334155}
+.site-footer{color:var(--muted);padding:24px 0;text-align:center}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:20px;margin:16px 0}
+
+/* Dropzone */
+.dropzone{position:relative;border:2px dashed #cbd5e1;border-radius:16px;background:#f8fafc;cursor:pointer;text-align:center}
+.dropzone:hover, .dropzone.hover{background:#f1f5f9}
+.dz-inner{padding:28px}
+.dz-icon{font-size:34px}
+.dz-text{margin-top:8px}
+.dz-text .link{color:var(--blue);cursor:pointer;text-decoration:underline}
+.dz-sub{color:var(--muted);font-size:13px}
+.visually-hidden{position:absolute;inset:0;opacity:0}
+
+/* Preview */
+.preview{margin-top:16px;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#fff}
+.preview img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain}
+
+/* Buttons */
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btn{appearance:none;border:0;border-radius:10px;padding:12px 18px;font-weight:600;cursor:pointer;transition:all .15s ease}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-600)}
+.btn-secondary{background:#e2e8f0;color:#0f172a}
+.btn-secondary:hover{background:#cbd5e1}
+
+.status{margin-top:8px;color:var(--muted);min-height:20px}
+.result-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.result-header h2{margin:0;font-size:22px}
+.badge{background:#e0e7ff;color:#1e3a8a;border:1px solid #c7d2fe;padding:6px 10px;border-radius:999px;font-weight:600}
+.result-info{margin:10px 0 0;color:#334155;line-height:1.5}
+
+/* Top3 */
+.top3{margin-top:16px}
+.top3-list{display:flex;flex-direction:column;gap:10px}
+.bar{height:10px;border-radius:999px;background:#e2e8f0;overflow:hidden}
+.bar>span{display:block;height:100%;background:var(--blue);}
+.top3-item{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px}
+.top3-item .name{font-weight:600}
+.top3-item .pct{color:#334155}
+
+/* Quality */
+.quality{margin-top:16px}
+.quality-list{margin:0;padding-left:18px;color:#334155}
+
+/* Spinner */
+.spinner{position:fixed;inset:0;background:rgba(15,23,42,.25);display:flex;align-items:center;justify-content:center;z-index:50}
+.spinner .loader{width:54px;height:54px;border-radius:50%;border:6px solid #e2e8f0;border-top-color:var(--blue);animation:spin 1s linear infinite;background:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.hidden{display:none}
+
+/* Dark theme */
+body.theme-dark{--bg:#0b1220;--card:#0f172a;--text:#e2e8f0;--muted:#94a3b8;--blue:#60a5fa;--blue-600:#3b82f6;}
+body.theme-dark .site-header{background:var(--card);border-color:#1f2937}
+body.theme-dark .card{box-shadow:none;border:1px solid #1f2937}
+body.theme-dark .dropzone{background:#0b1220;border-color:#1f2937}
+body.theme-dark .preview{background:#0b1220;border-color:#1f2937}
+body.theme-dark .badge{background:#132043;color:#93c5fd;border-color:#1d4ed8}
+
+@media (max-width:640px){.site-header h1{font-size:20px}.badge{font-size:14px}}

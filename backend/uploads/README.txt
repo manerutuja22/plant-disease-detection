@@ -1,0 +1,1 @@
+Uploads are saved here when you submit images from the frontend.

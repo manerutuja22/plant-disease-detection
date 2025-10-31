@@ -1,0 +1,2 @@
+Placeholder model file for demo. Replace this file with your trained Keras model
+in HDF5 format (plant_model.h5). The backend will attempt to load it at startup.
